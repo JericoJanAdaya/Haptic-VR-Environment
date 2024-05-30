@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Flame
+  - Projectile
+  - Destroyer
+  - MiniWorldCamera
+  - Water
+  - Object
+  - Painter
+  - CubeBox
+  - PyramidBox
+  - CylinderBox
+  - Cube
+  - Pyramid
+  - Cylinder
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Grabbing
+  - Grabbable
+  - Hand
+  - HandPlayer
+  - Left Hand Physics
+  - Wall Physics
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Pushable
+  - Character Collider
+  - Character Controller
+  - Teleport
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
