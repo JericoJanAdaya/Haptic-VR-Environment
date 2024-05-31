@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
 
-
 public class ColScript : MonoBehaviour
 {
     bool isInContact = false;
+    List<string> validTags = new List<string> { "Object", "Cube", "Cylinder", "Pyramid" };
 
     void OnCollisionStay(Collision col)
     {
-        if (col.gameObject.tag == "Object")
+        if (validTags.Contains(col.gameObject.tag))
         {
             isInContact = true;
         }
@@ -18,7 +18,7 @@ public class ColScript : MonoBehaviour
 
     void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.tag == "Object")
+        if (validTags.Contains(col.gameObject.tag))
         {
             isInContact = false;
         }
