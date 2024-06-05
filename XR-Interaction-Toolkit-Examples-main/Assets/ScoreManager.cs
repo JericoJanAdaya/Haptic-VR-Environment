@@ -20,6 +20,6 @@ public class ScoreManager : MonoBehaviour
             Debug.Log("Incorrect shape. No score addded.");
         }
 
-        Destroy(other.gameObject, 3f); // Destroy the object after 3 seconds
+Destroy(other.gameObject, 1f); // Destroy the object after 3 seconds
     }
 }
