@@ -7,6 +7,8 @@ using System.Collections;
 
 namespace UnityEngine.XR.Content.Interaction
 {
+// using GlobalScoreManager;
+
     /// <summary>
     /// An interactable that can be pushed by a direct interactor's movement
     /// </summary>
@@ -355,6 +357,7 @@ namespace UnityEngine.XR.Content.Interaction
 
         private void HandlePress()
         {
+            GlobalScoreManager.Instance.StartGame();
             StartCoroutine(SpawnAndMoveShape());
         }
 
@@ -377,39 +380,40 @@ namespace UnityEngine.XR.Content.Interaction
                     shapePrefab = cubePrefab;
                     break;
             }
-
-            GameObject shape = Instantiate(shapePrefab, new Vector3(4.15f, 1.0f, 3.399f), Quaternion.identity);
+            GameObject shape = Instantiate(shapePrefab, new Vector3(0.414f, 1.0f, -3.976763f), Quaternion.identity);
             
-            if(shape != null)
-            {
-                Vector3 endPosition;
-                endPosition = shape.transform.position - transform.forward * 7.25f;
-                yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
+            yield return null;
+            
+//             if(shape != null)
+//             {
+//                 Vector3 endPosition;
+//                 endPosition = shape.transform.position - transform.forward * 7.25f;
+//                 yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
 
-                endPosition = shape.transform.position - transform.right * 8.25f;
-                yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
+// endPosition = shape.transform.position - transform.right * 4.125f;
+//                 yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
 
-                endPosition = shape.transform.position + transform.forward * 1.7f;
-                yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
+// endPosition = shape.transform.position + transform.forward * 1.7f;
+// yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
 
-                endPosition = shape.transform.position + transform.right * 3.25f;
-                yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
-            }
+// endPosition = shape.transform.position + transform.right * 3.25f;
+// yield return StartCoroutine(MoveObject(shape, endPosition, 2.0f));
+//             }
         }
 
-        private IEnumerator MoveObject(GameObject obj, Vector3 target, float duration)
-        {
-            float elapsed = 0;
-            Vector3 startPos = obj.transform.position;
+        // private IEnumerator MoveObject(GameObject obj, Vector3 target, float duration)
+        // {
+        //     float elapsed = 0;
+        //     Vector3 startPos = obj.transform.position;
 
-            while (elapsed < duration && obj != null)
-            {
-                obj.transform.position = Vector3.Lerp(startPos, target, elapsed / duration);
-                elapsed += Time.deltaTime;
+        //     while (elapsed < duration && obj != null)
+        //     {
+        //         obj.transform.position = Vector3.Lerp(startPos, target, elapsed / duration);
+        //         elapsed += Time.deltaTime;
                 
-                yield return null;
-            }
-            if (obj != null) obj.transform.position = target;
-        }
+        //         yield return null;
+        //     }
+        //     if (obj != null) obj.transform.position = target;
+        // }
     }
 }
